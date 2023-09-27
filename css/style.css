@@ -1,20 +1,27 @@
+.logo{
+    display: flex;
+    color: #FFC300;
+
+}
+
 body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #367584;
 }
 
 .container{
-    max-width: 500px;
+    max-width: 800px;
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
     margin: 0;
     padding: 20px;
-    background-color: #fff;
+    background-color: #40C6C1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-
-    bottom: 100px;
-    left: 100px;
+    
 }
 form{
     text-align: center;

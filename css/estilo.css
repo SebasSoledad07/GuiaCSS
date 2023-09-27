@@ -1,39 +1,47 @@
+.logo{
+    display: flex;
+    color: #FFC300;
+
+}
 body{
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0d0;
-    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    background:#367584;
+    
+    
 }
 
 .container{
-    width: 500px;
-    height: 300px;
-    box-sizing: border-box;
+    max-width: 500px;
+    display: block;
+    position: relative;
+    left: 400px;
+    bottom: -100px;
     margin: 0;
-    padding: 40px;
     background-color: aquamarine;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     border-spacing: 50px;
-    display: inline-block;
-    position: relative;
-    top: 100px;
-    bottom: 100px;
+    
 
     
-    
 }
-input{
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+
+button{
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: 10px;
     border-radius: 3px;
-
-
+    margin-bottom: 4px;
+    cursor:pointer;
 }
+
+
+
 form{
+    position: relative;
     text-align: center;
+    
 }
