@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styletable.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 class="Nombre">Sebastian Soledad - 1152172 </h1>
+            <body>
+                <h2>Tabla de Datos</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo Electrónico</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-body">
+                        <!-- Los registros se agregarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            
+                
+                <form id="registro-form">
+                    <h2>Agregar Registro</h2>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required><br><br>
+            
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" required><br><br>
+            
+                    <input type="button" value="Agregar Registro" onclick="agregarRegistro()">
+                </form>
+            
+        <script>
+        const tablaBody = document.getElementById('tabla-body');
+        const nombreInput = document.getElementById('nombre');
+        const emailInput = document.getElementById('email');
+
+        let registros = [];
+
+        function agregarRegistro() {
+            const nombre = nombreInput.value;
+            const email = emailInput.value;
+
+            if (nombre && email) {
+                const nuevoRegistro = {
+                    id: registros.length + 1,
+                    nombre: nombre,
+                    email: email
+                };
+
+                registros.push(nuevoRegistro);
+                actualizarTabla();
+
+                // Limpiar los campos del formulario después de agregar el registro
+                nombreInput.value = '';
+                emailInput.value = '';
+            }
+        }
+
+        function actualizarTabla() {
+            // Limpiar el contenido de la tabla
+            tablaBody.innerHTML = '';
+
+            // Recorrer el arreglo de registros y agregar cada uno a la tabla
+            registros.forEach(registro => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${registro.id}</td>
+                    <td>${registro.nombre}</td>
+                    <td>${registro.email}</td>
+                `;
+                tablaBody.appendChild(row);
+            });
+        }
+        </script>
+    
+</body>
+</html>
